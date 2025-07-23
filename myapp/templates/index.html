@@ -1,0 +1,14 @@
+<h1>DynamixWave Todo List</h1>
+
+
+{% for i in todo %}
+
+<h1>id => {{i.id}}</h1>
+<h1>Title => {{i.title}}</h1>
+<h1>Description => {{i.description}}</h1>
+<input type="checkbox"><span>Completed</span>
+<h1>Created_at => {{i.created_at}}</h1>
+<h1>Updated_at => {{i.updated_at}}</h1>
+<hr>
+
+{% endfor %}
