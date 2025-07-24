@@ -1,3 +1,6 @@
+{% extends 'base.html' %}
+{% block body %}
+
 <h1>DynamixWave Todo List</h1>
 
 
@@ -6,9 +9,11 @@
 <h1>id => {{i.id}}</h1>
 <h1>Title => {{i.title}}</h1>
 <h1>Description => {{i.description}}</h1>
-<input type="checkbox"><span>Completed</span>
+<input type="checkbox" {% if i.completed %} checked {% endif %}><span>Completed</span>
 <h1>Created_at => {{i.created_at}}</h1>
 <h1>Updated_at => {{i.updated_at}}</h1>
 <hr>
 
 {% endfor %}
+
+{% endblock %}
