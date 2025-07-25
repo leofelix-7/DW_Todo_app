@@ -1,4 +1,20 @@
-body{
-    background-color: blue;
-    color: white;
+/* Google font */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+* {
+    outline: none;
+    padding: none;
+    margin: none;
+    text-decoration: none;
+    font-family: sans-serif;
 }
+
+:root {
+    --main-accent: rgb(255, 255, 255);
+    --main-accent-dark: rgb(146, 146, 146);
+    --panel-m-bg: rgb(24, 24, 24);
+    --panel-bg: rgb(20, 20, 20);
+}
+
+/* HEADER SECTIONNNNNNNNN
+ */
