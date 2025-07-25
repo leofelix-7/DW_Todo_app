@@ -13,23 +13,36 @@
 :root {
     --main-accent: rgb(43, 230, 255);
     --main-accent-dark: rgb(49, 117, 156);
-    --panel-m-bg: rgb(31, 31, 31);
+    --panel-m-bg: rgb(20, 20, 20);
     --panel-bg: rgb(15, 15, 15);
 }
 
 body {
     background-color: var(--panel-bg);
+    width: 100%;
+    align-items: center;
 }
 
 
 /* / Todo list div */
 .todo {
-    width: --webkit-fill-avaiable;
-    padding: 1rem 30%;
+    width: -webkit-fill-available;
+    margin: 1rem 30%;
     align-items: center;
+    padding: 1rem;
+    border-top: solid 1.8px rgb(49, 49, 49);
+    border-left: solid 1.5px rgba(0, 0, 0, 0);
+    border-bottom: solid 1.5px rgba(0, 0, 0, 0);
+    border-right: solid 1.5px rgba(0, 0, 0, 0);
+    border-radius: 1.5rem;
+    transition: .1s;
 
-    transition: .3s;
+}
 
+.todo:hover {
+    background-color: var(--panel-m-bg);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: solid 1.5px rgb(65, 65, 65);
 }
 
 /* CHECKBOX SIZE */
@@ -44,16 +57,15 @@ input[type="checkbox"] {
     display: flex;
     gap: .7rem;
     align-items: center;
-    border-top: solid rgb(58, 58, 58) 1px;
-    padding-top: .5rem;
 }
 
 .todo .todo-header h1 {
     font-size: 2rem;
+    font-weight: 800;
 }
 
 .todo .desc {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     opacity: 0.8;
 }
 
@@ -64,10 +76,11 @@ input[type="checkbox"] {
 }
 
 .todo .tag {
-    padding: .4rem .6rem;
+    padding: .3rem .5rem;
     border-radius: 1rem;
-    font-size: .9rem;
+    font-size: .8rem;
 }
+
 
 
 
