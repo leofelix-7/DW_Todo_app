@@ -1,5 +1,3 @@
-# your_app_name/models.py (replace 'your_app_name' with your actual app name)
-
 from django.db import models
 from colorfield.fields import ColorField
 import uuid
@@ -8,7 +6,7 @@ from django.core.exceptions import ValidationError
 class Tag(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=20, unique=True) 
-    color = ColorField(default='#FF0000') 
+    color = ColorField(default="#0099FF") 
 
     def clean(self):
         if len(self.name) < 2:
