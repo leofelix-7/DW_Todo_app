@@ -1,27 +1,41 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block body %}
 
-<h1>DynamixWave Todo List</h1>
 
-<div class="main-bg">
-    <h1>lava</h1>
-    <div class="left-panel">
 
-    </div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<div class="left-panel">
+
 </div>
 
-
 {% for i in todo %}
+<div class="todo">
+    <!-- TODO HEADER -->
+    <div class="todo-header">
+        <!-- TODO CHECKBOX -->
+        <input type="checkbox" class="checkbox" {% if i.completed %} checked {% endif %}>
 
+        <!-- TODO TITLE -->
+        <h1>{{i.title}}</h1>
+    </div>
 
-<h1>id => {{i.id}}</h1>
-<h1>Title => {{i.title}}</h1>
-<h1>Description => {{i.description}}</h1>
-<input type="checkbox" {% if i.completed %} checked {% endif %}><span>Completed</span>
-<h1>Created_at => {{i.created_at}}</h1>
-<h1>Updated_at => {{i.updated_at}}</h1>
-<hr>
+    <!-- TODO DESCRIPTION -->
+    <span class="desc">
+        {{i.description}}
+    </span>
+
+    <!-- TODO TAGS -->
+    <div class="tags">
+        {% for tag in i.tags.all %}
+            <h1 class="tag" style="background-color: {{ tag.color }}80;">{{ tag.name }}</h1>
+        {% endfor %}
+    </div>
+</div>
+<div class="right-panel">
+
+</div>
 
 {% endfor %}
-
 {% endblock %}

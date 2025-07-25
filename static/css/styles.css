@@ -6,15 +6,50 @@
     padding: none;
     margin: none;
     text-decoration: none;
-    font-family: sans-serif;
+    font-family: "Nunito Sans", sans-serif;
+    color: white;
 }
 
 :root {
-    --main-accent: rgb(255, 255, 255);
-    --main-accent-dark: rgb(146, 146, 146);
-    --panel-m-bg: rgb(24, 24, 24);
-    --panel-bg: rgb(20, 20, 20);
+    --main-accent: rgb(43, 230, 255);
+    --main-accent-dark: rgb(49, 117, 156);
+    --panel-m-bg: rgb(31, 31, 31);
+    --panel-bg: rgb(15, 15, 15);
 }
 
-/* HEADER SECTIONNNNNNNNN
- */
+body {
+    background-color: var(--panel-bg);
+}
+
+
+/* / Todo list div */
+.todo {
+    width: --webkit-fill-avaiable;
+    padding: 1rem 30%;
+}
+
+/* CHECKBOX SIZE */
+input[type="checkbox"]
+
+.todo .todo-header {
+    display: flex;
+    gap: 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
