@@ -30,7 +30,7 @@ body {
     margin: 1rem 30%;
     align-items: center;
     padding: 1rem;
-    border-top: solid 2px rgb(49, 49, 49);
+    border: solid 2px rgb(34, 34, 34);
     border-radius: 1.5rem;
     transition: .1s;
 
@@ -39,6 +39,7 @@ body {
 .todo:hover {
     background-color: var(--panel-m-bg);
     box-shadow: 0 0 10px rgb(26, 26, 26);
+    border-top: solid 2px rgb(49, 49, 49);
 }
 
 /* CHECKBOX SIZE */
