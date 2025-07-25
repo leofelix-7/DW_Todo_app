@@ -25,7 +25,7 @@ class TodoModel(models.Model):
     completed = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    tags = models.ManyToManyField('Tag', related_name='todos', blank=True) # Connects to the Tag model
+    tags = models.ManyToManyField('Tag', related_name='todos', blank=True) # added
 
     def __str__(self):
         return self.title

@@ -1,12 +1,12 @@
 /* Google font */
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
 
 * {
     outline: none;
-    padding: none;
-    margin: none;
+    padding: 0;
+    margin: 0;
     text-decoration: none;
-    font-family: "Nunito Sans", sans-serif;
+    font-family: "Red Hat Display", sans-serif;
     color: white;
 }
 
@@ -26,14 +26,47 @@ body {
 .todo {
     width: --webkit-fill-avaiable;
     padding: 1rem 30%;
+    align-items: center;
+
+    transition: .3s;
+
 }
 
 /* CHECKBOX SIZE */
-input[type="checkbox"]
+input[type="checkbox"] {
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+    accent-color: var(--main-accent);
+}
 
 .todo .todo-header {
     display: flex;
-    gap: 1rem;
+    gap: .7rem;
+    align-items: center;
+    border-top: solid rgb(58, 58, 58) 1px;
+    padding-top: .5rem;
+}
+
+.todo .todo-header h1 {
+    font-size: 2rem;
+}
+
+.todo .desc {
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+.todo .tags {
+    display: flex;
+    gap: .5rem;
+    margin-top: .5rem;
+}
+
+.todo .tag {
+    padding: .4rem .6rem;
+    border-radius: 1rem;
+    font-size: .9rem;
 }
 
 
