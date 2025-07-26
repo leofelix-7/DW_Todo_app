@@ -27,7 +27,7 @@ body {
 .todo {
     width: -webkit-fill-available;
     margin: 1rem 30%;
-    padding: 1rem;
+    padding: .8rem;
     border: solid 2px rgba(34, 34, 34, 0);
     border-radius: 1.5rem;
     transition: .1s;
@@ -67,7 +67,7 @@ body {
     background-color: transparent;
     border-radius: 1rem;
     border: 2px solid #ccc;
-    transition: background 0.2s, border 0.2s;
+    transition: .1s;
 }
 
 .checkmark:after {
@@ -95,7 +95,6 @@ body {
     content: "";
     position: absolute;
 }
-/* --- End custom checkbox block --- */
 
 .todo .left {
     padding-top: .2rem;
@@ -149,7 +148,7 @@ body {
 .todo .tag {
     padding: .2rem .4rem;;
     border-radius: 1rem;
-    font-size: .8rem;
+    font-size: .7rem;
 }
 
 
