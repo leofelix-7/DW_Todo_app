@@ -2,55 +2,48 @@
 {% load static %}
 {% block body %}
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-<div class="left-panel">
-
-</div>
+<div class="left-panel"></div>
 
 {% for i in todo %}
 <div class="todo">
-    <!-- TODO HEADER -->
-    <div class="todo-header">
-        <div class="title">
-            <!-- TODO CHECKBOX -->
-            <input type="checkbox" class="checkbox" {% if i.completed %} checked {% endif %} ">
+    <div class="left">
+        <label class="checkbox-container">
+            <input type="checkbox" class="checkbox" {% if i.completed %}checked{% endif %} style="border: solid 2px {{ i.color }};">
+            <span class="checkmark" style="border-color: var(--main-accent);"></span>
+        </label>
+    </div>
 
-            <!-- TODO TITLE -->
-            {% if i.color %}
-                <h1><i class="fa-solid fa-circle" style="color: {{ i.color }};font-size: 1.4rem;"></i> {{ i.title }}</h1>
-            {% else %}
+    <div class="right">
+        <!-- TODO HEADER -->
+        <div class="todo-header">
+            <div class="title">
                 <h1>{{ i.title }}</h1>
-            {% endif %}
+            </div>
+            <div class="data">
+                {% if i.time %}
+                    <h1 class="tag"><i class="fa-solid fa-clock"></i> {{ i.time }}</h1>
+                {% endif %}
+                {% if i.date %}
+                    <h1 class="tag"><i class="fa-solid fa-calendar"></i> {{ i.date }}</h1>
+                {% endif %}
+            </div>
         </div>
-        <div class="data">
-            {% if i.time %}
-                <h1 class="tag"><i class="fa-solid fa-clock"></i> {{ i.time }}</h1>
-            {% endif %}
-            {% if i.date %}
-                <h1 class="tag"><i class="fa-solid fa-calendar"></i> {{ i.date }}</h1>
-            {% endif %}
+
+        <!-- TODO DESCRIPTION -->
+        <span class="desc">
+            {{i.description}}
+        </span>
+
+        <!-- TODO TAGS -->
+        <div class="tags">
+            {% for tag in i.tags.all %}
+                <h1 class="tag" style="background-color: {{ tag.color }}4D;"><i class="fa-solid fa-tag"></i> {{ tag.name }}</h1>
+            {% endfor %}
         </div>
     </div>
-
-    <!-- TODO DESCRIPTION -->
-    <span class="desc">
-        {{i.description}}
-    </span>
-
-    <!-- TODO TAGS -->
-    <div class="tags">
-        {% for tag in i.tags.all %}
-            <h1 class="tag" style="background-color: {{ tag.color }}4D;"><i class="fa-solid fa-tag"></i> {{ tag.name }}</h1>
-        {% endfor %}
-    </div>
 </div>
-<div class="right-panel">
-
-</div>
-
+<div class="right-panel"></div>
 {% endfor %}
 {% endblock %}
