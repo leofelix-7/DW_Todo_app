@@ -4,6 +4,7 @@
 
 
 
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 <div class="left-panel">
@@ -14,11 +15,25 @@
 <div class="todo">
     <!-- TODO HEADER -->
     <div class="todo-header">
-        <!-- TODO CHECKBOX -->
-        <input type="checkbox" class="checkbox" {% if i.completed %} checked {% endif %}">
+        <div class="title">
+            <!-- TODO CHECKBOX -->
+            <input type="checkbox" class="checkbox" {% if i.completed %} checked {% endif %} ">
 
-        <!-- TODO TITLE -->
-        <h1>{{ i.title }}</h1>
+            <!-- TODO TITLE -->
+            {% if i.color %}
+                <h1><i class="fa-solid fa-circle" style="color: {{ i.color }};font-size: 1.4rem;"></i> {{ i.title }}</h1>
+            {% else %}
+                <h1>{{ i.title }}</h1>
+            {% endif %}
+        </div>
+        <div class="data">
+            {% if i.time %}
+                <h1 class="tag"><i class="fa-solid fa-clock"></i> {{ i.time }}</h1>
+            {% endif %}
+            {% if i.date %}
+                <h1 class="tag"><i class="fa-solid fa-calendar"></i> {{ i.date }}</h1>
+            {% endif %}
+        </div>
     </div>
 
     <!-- TODO DESCRIPTION -->

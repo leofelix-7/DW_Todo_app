@@ -11,9 +11,9 @@
 }
 
 :root {
-    --main-accent: rgb(43, 230, 255);
+    --main-accent: rgb(43, 195, 255);
     --main-accent-dark: rgb(49, 117, 156);
-    --panel-m-bg: rgb(32, 32, 32);
+    --panel-m-bg: #202020;
     --panel-bg: rgb(15, 15, 15);
 }
 
@@ -22,7 +22,6 @@ body {
     width: 100%;
     align-items: center;
 }
-
 
 /* / Todo list div */
 .todo {
@@ -33,9 +32,7 @@ body {
     border: solid 2px rgb(34, 34, 34);
     border-radius: 1.5rem;
     transition: .1s;
-
 }
-
 .todo:hover {
     background-color: var(--panel-m-bg);
     box-shadow: 0 0 10px rgb(26, 26, 26);
@@ -54,11 +51,30 @@ input[type="checkbox"] {
     display: flex;
     gap: .5rem;
     align-items: center;
+    justify-content: space-between;
 }
 
-.todo .todo-header h1 {
+.todo .title {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.todo .data {
+    display: flex;
+    gap: .5rem;
+}
+
+.todo .data .tag {
+    padding: .2rem .4rem;
+    border-radius: 1rem;
+    font-size: .8rem;
+}
+
+.todo .todo-header .title h1 {
     font-size: 1.5rem;
     font-weight: 800;
+    align-items: center;
 }
 
 .todo .desc {
@@ -76,6 +92,7 @@ input[type="checkbox"] {
     padding: .2rem .4rem;
     border-radius: 1rem;
     font-size: .8rem;
+    background-color: rgb(36, 36, 36);
 }
 
 
