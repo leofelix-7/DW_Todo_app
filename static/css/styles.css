@@ -27,19 +27,15 @@ body {
 /* / Todo list div */
 .todo {
     width: -webkit-fill-available;
-    margin: 0rem 30%;
+    margin: 0 30%;
     padding: .6rem .6rem .6rem .6rem;
     border: solid 2px rgba(34, 34, 34, 0);
     border-radius: 1.8rem;
     display: flex;
     gap: 1rem;
-
-    transition: .1s;
 }
 .todo:hover {
     background-color: var(--panel-m-bg);
-    border-top: solid 2px rgb(34, 34, 34);
-    box-shadow: 0 0 10px rgb(26, 26, 26);
 }
 
 .checkbox-container {
@@ -203,11 +199,3 @@ body {
     text-align: center;
     width: 100%;
 }
-
-
-
-
-
-
-
-

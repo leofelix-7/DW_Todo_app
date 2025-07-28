@@ -26,7 +26,6 @@ class TodoModel(models.Model):
     tags = models.ManyToManyField('Tag', related_name='todos', blank=True) # added
     date = models.DateField(null=True, blank=True) # added
     time = models.TimeField(null=True, blank=True) # added
-    color = ColorField(null=True, blank=True)
 
     def __str__(self):
         return self.title
