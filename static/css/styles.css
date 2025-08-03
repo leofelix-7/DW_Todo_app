@@ -1,6 +1,7 @@
-/* Google font */
+/* Google font import */
 @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
 
+/* Reset and Global Styles */
 * {
     outline: none;
     padding: 0;
@@ -10,34 +11,68 @@
     color: white;
 }
 
+/* Root variables for theme colors */
 :root {
     --main-accent: rgb(29, 172, 255);
     --main-accent-dark: rgb(49, 117, 156);
     --panel-m-bg: #ffffff0c;
-    --panel-bg: rgb(15, 15, 15);
+    --panel-bg: rgb(24, 24, 24);
 }
 
+/* Body styling */
 body {
-    margin-top: 1rem;
     background-color: var(--panel-bg);
     width: 100%;
     align-items: center;
 }
 
-/* / Todo list div */
-.todo {
-    width: -webkit-fill-available;
-    margin: 0 30%;
+/* Background div adjustments */
+.bg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background: url('bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+}
+
+/* Left and Right Panel adjustments */
+.bg .left-panel, .bg .right-panel {
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+}
+
+/* Mid Panel adjustments */
+.bg .mid-panel {
+    background-color: rgba(0, 0, 0, 0.445);
+    backdrop-filter: blur(50px);
+    display: flex;
+    flex-direction: column;
+
+    padding: 1rem;
+    height: 100vh;
+}
+
+/* Todo list div adjustments */
+.bg .mid-panel .todo {
+    width: 50rem;
     padding: .6rem .6rem .6rem .6rem;
     border: solid 2px rgba(34, 34, 34, 0);
     border-radius: 1.8rem;
     display: flex;
     gap: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1rem;
 }
-.todo:hover {
+
+/* Hover effect for todo list div */
+.bg .mid-panel .todo:hover {
     background-color: var(--panel-m-bg);
 }
 
+/* Checkbox container styling */
 .checkbox-container {
     position: relative;
     padding-left: 2rem;
@@ -47,6 +82,7 @@ body {
     height: 1.5rem;
 }
 
+/* Checkbox input styling */
 .checkbox-container input[type="checkbox"] {
     position: absolute;
     opacity: 0;
@@ -56,6 +92,7 @@ body {
     margin: 0;
 }
 
+/* Checkmark styling */
 .checkmark {
     position: absolute;
     top: 0;
@@ -68,20 +105,24 @@ body {
     transition: .1s;
 }
 
+/* Checkmark after pseudo-element */
 .checkmark:after {
     content: "";
     position: absolute;
     display: none;
 }
 
+/* Checked state for checkbox */
 .checkbox-container input:checked ~ .checkmark {
     background-color: var(--main-accent);
 }
 
+/* Display checkmark when checked */
 .checkbox-container input:checked ~ .checkmark:after {
     display: block;
 }
 
+/* Checkmark tick styling */
 .checkbox-container .checkmark:after {
     left: 0.5rem;
     top: 0.2rem;
@@ -94,70 +135,74 @@ body {
     position: absolute;
 }
 
-.todo .left {
+/* Left section of todo list */
+.bg .mid-panel .todo .left {
     padding-top: .2rem;
 }
 
-.todo .right {
+/* Right section of todo list */
+.bg .mid-panel .todo .right {
     width: 100%;
 }
 
-.todo .todo-header {
+/* Todo header styling */
+.bg .mid-panel .todo .todo-header {
     display: flex;
     gap: .5rem;
     align-items: center;
     justify-content: space-between;
 }
 
-.todo .title {
+/* Title styling in todo header */
+.bg .mid-panel .todo .title {
     display: flex;
     align-items: center;
     gap: .5rem;
 }
 
-.todo .data {
+/* Data section styling in todo header */
+.bg .mid-panel .todo .data {
     display: flex;
     gap: .5rem;
 }
 
-.todo .data .tag {
+/* Tag styling in data section */
+.bg .mid-panel .todo .data .tag {
     padding: 0 .4rem .2rem .4rem;
     border-radius: 1rem;
     font-size: .8rem;
 }
 
-.todo .todo-header .title h1 {
+/* Title text styling */
+.bg .mid-panel .todo .todo-header .title h1 {
     font-size: 1.3rem;
     font-weight: 800;
     align-items: center;
     margin-top: .2rem;
 }
 
-.todo .desc {
+/* Description styling */
+.bg .mid-panel .todo .desc {
     font-size: 1rem;
     opacity: 0.8;
 }
 
-.todo .tags {
+/* Tags container styling */
+.bg .mid-panel .todo .tags {
     display: flex;
     gap: .5rem;
     margin-top: .5rem;
 }
 
-.todo .tag {
-    padding: .2rem .4rem;;
+/* Individual tag styling */
+.bg .mid-panel .todo .tag {
+    padding: .2rem .4rem;
     border-radius: 1rem;
     font-size: .7rem;
 }
 
-
-
-
-
-
-
-
-.add {
+/* Add button adjustments */
+.bg .mid-panel .add {
     width: -webkit-fill-available;
     margin: 0rem 30%;
     padding: .6rem .6rem .6rem .6rem;
@@ -166,10 +211,11 @@ body {
     display: flex;
     gap: 1rem;
     opacity: .5;
-
     transition: .1s;
 }
-.add:hover {
+
+/* Hover effect for add button */
+.bg .mid-panel .add:hover {
     background-color: var(--panel-m-bg);
     border-top: solid 2px rgb(34, 34, 34);
     box-shadow: 0 0 10px rgb(26, 26, 26);
@@ -177,21 +223,24 @@ body {
     opacity: 1;
 }
 
-.add .todo-header {
+/* Add button header styling */
+.bg .mid-panel .add .todo-header {
     display: flex;
     gap: .5rem;
     align-items: center;
     justify-content: space-between;
 }
 
-.add .title {
+/* Add button title styling */
+.bg .mid-panel .add .title {
     display: flex;
     align-items: center;
     gap: .5rem;
     text-align: center;
 }
 
-.add .todo-header .title h1 {
+/* Add button title text styling */
+.bg .mid-panel .add .todo-header .title h1 {
     font-size: 1rem;
     color: rgba(255, 255, 255, 0.527);
     align-items: center;
