@@ -65,8 +65,14 @@ body {
     border: solid 1px transparent;
 }
 
+/* border on todo hover */
 .bg .mid-panel .todo:hover {
     border: solid 1px rgb(223, 223, 223);
+}
+/* make tag-d and icon grey when todo hovered */
+.bg .mid-panel .todo:hover .tag-d,
+.bg .mid-panel .todo:hover .tag-d .fa-solid {
+    color: grey !important;
 }
 
 /* checkboks lol */
@@ -162,11 +168,24 @@ body {
     gap: .5rem;
 }
 
-/* tag in data */
-.bg .mid-panel .todo .data .tag {
+/* tag in data (now tag-d) */
+.bg .mid-panel .todo .data .tag-d {
     padding: 0 .4rem .2rem .4rem;
     border-radius: 1rem;
     font-size: .8rem;
+    color: rgb(201, 201, 201);
+    transition: .1s;
+}
+
+.bg .mid-panel .todo .data .tag-d i {
+    color: rgb(201, 201, 201);
+    transition: .1s;
+}
+
+/* both icon n text go black on tag-d hover lol */
+.bg .mid-panel .todo .data .tag-d:hover,
+.bg .mid-panel .todo .data .tag-d:hover .fa-solid {
+    color: black !important;
 }
 
 /* big text title */
