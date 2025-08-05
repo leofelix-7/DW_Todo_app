@@ -6,7 +6,14 @@
 
 <div class="bg">
     <div class="mid-panel">
-        <h1> </h1>
+        <h1> 
+
+
+        </h1>
+        <div class="topbar">
+            <!-- TODO ADD BUTTON -->
+            <a href="" class="add-button">+ Add More Todo Lists</a>
+        </div>
         {% for i in todo %}
         <div class="todo">
             <div class="left">
@@ -47,18 +54,6 @@
         </div>
         <div class="right-panel"></div>
         {% endfor %}
-
-        <!-- TODO ADD BUTTON -->
-        <div class="add">
-            <div class="right">
-                <!-- TODO HEADER -->
-                <div class="todo-header">
-                    <div class="title">
-                        <h1>+ Add more ToDo Lists</h1>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 </div>
 {% endblock %}

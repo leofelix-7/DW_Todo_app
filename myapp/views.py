@@ -10,12 +10,44 @@ def TodoList(request):
     }
     return render(request, 'index.html',contex)
 
-@require_POST
-def toggle_completed(request, todo_id):
-    todo = get_object_or_404(TodoModel, id=todo_id)
-    completed = request.POST.get('completed')
-    if completed is None:
-        return HttpResponseBadRequest('Missing completed value')
-    todo.completed = completed == 'true' or completed == 'on' or completed == '1'
-    todo.save()
-    return redirect(request.META.get('HTTP_REFERER', '/'))
+# Create Function
+def TodoCreate(request):
+    if request.method == 'POST':
+        title = request.POST.get('title')
+        description = request.POST.get('description')
+        completed = request.POST.get('completed') == 'on'
+
+        TodoModel.objects.create(
+            title=title,
+            description=description,
+            completed=completed,
+        )
+
+        return redirect('TodoList')
+    return render(request, 'todo_form.html')
+
+# Details Function
+def TodoDetail(request, pk):
+    todo = get_object_or_404(TodoModel, pk=pk)
+    return render(request, 'todo_detail.html', {'todo':todo})
+
+# Update Function
+def TodoUpdate(request,pk):
+    todo = get_object_or_404(TodoModel, pk=pk)
+
+    if request.method == 'POST':
+        todo.title = request.POST.get('title')
+        todo.description = request.POST('description')
+        todo.completed = request.POST.get('completed') == 'on'
+        todo.save()
+        return redirect('TodoList')
+    return render(request, 'todo_form.html', {'todo':todo})
+
+# Delete Function
+def TodoDelete(request, pk):
+    todo = get_object_or_404(TodoModel, pk=pk)
+
+    if request.method == 'POST':
+        todo.delete()
+        return redirect('TodoList')
+    return render(request, 'index.html', {'todo':todo})

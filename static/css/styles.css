@@ -1,32 +1,32 @@
-/* Google font import */
+/* font thing lol */
 @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
 
-/* Reset and Global Styles */
+/* reset stuff */
 * {
     outline: none;
     padding: 0;
     margin: 0;
     text-decoration: none;
     font-family: "Red Hat Display", sans-serif;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
-/* Root variables for theme colors */
+/* colors vars or smth */
 :root {
-    --main-accent: rgb(29, 172, 255);
+    --main-accent: rgb(0, 112, 240);
     --main-accent-dark: rgb(49, 117, 156);
-    --panel-m-bg: #47474752;
-    --panel-bg: rgb(24, 24, 24);
+    --panel-m-bg: #161616;
+    --panel-bg: rgb(255, 255, 255);
 }
 
-/* Body styling */
+/* body stuff */
 body {
     background-color: var(--panel-bg);
     width: 100%;
     align-items: center;
 }
 
-/* Background div adjustments */
+/* bg div, main bg lol */
 .bg {
     display: flex;
     flex-direction: row;
@@ -40,10 +40,8 @@ body {
     backdrop-filter: blur(50px);
 }
 
-/* Mid Panel adjustments */
+/* mid pannel, center thing */
 .bg .mid-panel {
-    background-color: rgba(0, 0, 0, 0.445);
-    backdrop-filter: blur(50px);
     display: flex;
     flex-direction: column;
 
@@ -53,7 +51,7 @@ body {
     width: 100%;
 }
 
-/* Todo list div adjustments */
+/* todo box thing */
 .bg .mid-panel .todo {
     width: 50rem;
     padding: .6rem .6rem .6rem .6rem;
@@ -63,12 +61,16 @@ body {
     gap: 1rem;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 1rem;
 
     border: solid 1px transparent;
 }
 
-/* Checkbox container styling */
+.bg .mid-panel .todo:hover {
+    background-color: rgb(250, 250, 250);
+    border: solid 1px rgb(223, 223, 223);
+}
+
+/* checkboks lol */
 .checkbox-container {
     position: relative;
     padding-left: 2rem;
@@ -78,7 +80,7 @@ body {
     height: 1.5rem;
 }
 
-/* Checkbox input styling */
+/* input for checkboks */
 .checkbox-container input[type="checkbox"] {
     position: absolute;
     opacity: 0;
@@ -88,7 +90,7 @@ body {
     margin: 0;
 }
 
-/* Checkmark styling */
+/* checkmark, lil tick */
 .checkmark {
     position: absolute;
     top: 0;
@@ -98,27 +100,26 @@ body {
     background-color: transparent;
     border-radius: 1rem;
     border: 2px solid #ccc;
-    transition: .1s;
 }
 
-/* Checkmark after pseudo-element */
+/* after thing for tick */
 .checkmark:after {
     content: "";
     position: absolute;
     display: none;
 }
 
-/* Checked state for checkbox */
+/* when u check it */
 .checkbox-container input:checked ~ .checkmark {
     background-color: var(--main-accent);
 }
 
-/* Display checkmark when checked */
+/* show tick if checked */
 .checkbox-container input:checked ~ .checkmark:after {
     display: block;
 }
 
-/* Checkmark tick styling */
+/* tick style, idk */
 .checkbox-container .checkmark:after {
     left: 0.5rem;
     top: 0.2rem;
@@ -131,17 +132,17 @@ body {
     position: absolute;
 }
 
-/* Left section of todo list */
+/* left part todo */
 .bg .mid-panel .todo .left {
     padding-top: .2rem;
 }
 
-/* Right section of todo list */
+/* right part todo */
 .bg .mid-panel .todo .right {
     width: 100%;
 }
 
-/* Todo header styling */
+/* todo header, up part */
 .bg .mid-panel .todo .todo-header {
     display: flex;
     gap: .5rem;
@@ -149,55 +150,55 @@ body {
     justify-content: space-between;
 }
 
-/* Title styling in todo header */
+/* title in header */
 .bg .mid-panel .todo .title {
     display: flex;
     align-items: center;
     gap: .5rem;
 }
 
-/* Data section styling in todo header */
+/* data in header */
 .bg .mid-panel .todo .data {
     display: flex;
     gap: .5rem;
 }
 
-/* Tag styling in data section */
+/* tag in data */
 .bg .mid-panel .todo .data .tag {
     padding: 0 .4rem .2rem .4rem;
     border-radius: 1rem;
     font-size: .8rem;
 }
 
-/* Title text styling */
+/* big text title */
 .bg .mid-panel .todo .todo-header .title h1 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 800;
     align-items: center;
     margin-top: .2rem;
 }
 
-/* Description styling */
+/* desc, smol text */
 .bg .mid-panel .todo .desc {
     font-size: 1rem;
     opacity: 0.8;
 }
 
-/* Tags container styling */
+/* tags row */
 .bg .mid-panel .todo .tags {
     display: flex;
     gap: .5rem;
     margin-top: .5rem;
 }
 
-/* Individual tag styling */
+/* tag box */
 .bg .mid-panel .todo .tag {
     padding: .2rem .4rem;
     border-radius: 1rem;
     font-size: .7rem;
 }
 
-/* Add button adjustments */
+/* add btn thing */
 .bg .mid-panel .add {
     width: -webkit-fill-available;
     margin: 0rem 30%;
@@ -210,7 +211,7 @@ body {
     transition: .1s;
 }
 
-/* Hover effect for add button */
+/* hover add btn */
 .bg .mid-panel .add:hover {
     background-color: var(--panel-m-bg);
     border-top: solid 2px rgb(34, 34, 34);
@@ -219,7 +220,7 @@ body {
     opacity: 1;
 }
 
-/* Add button header styling */
+/* add btn header */
 .bg .mid-panel .add .todo-header {
     display: flex;
     gap: .5rem;
@@ -227,7 +228,7 @@ body {
     justify-content: space-between;
 }
 
-/* Add button title styling */
+/* add btn title */
 .bg .mid-panel .add .title {
     display: flex;
     align-items: center;
@@ -235,7 +236,7 @@ body {
     text-align: center;
 }
 
-/* Add button title text styling */
+/* add btn text */
 .bg .mid-panel .add .todo-header .title h1 {
     font-size: 1rem;
     color: rgba(255, 255, 255, 0.527);
@@ -243,4 +244,33 @@ body {
     margin-top: .2rem;
     text-align: center;
     width: 100%;
+}
+
+
+
+.bg .mid-panel .topbar {
+    display: flex;
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+.bg .mid-panel .topbar .add-button {
+    padding: 9.6px;
+    margin-left: 0;
+    background-color: black;
+    color: white;
+    background-color: white;
+    color: black;
+    border: solid 1px white;
+    border-radius: 50rem;
+    transition: .2s;
+    margin-bottom: 1rem;
+}
+
+.bg .mid-panel .topbar .add-button:hover {
+    border: solid 1px rgb(255, 255, 255);
+    background-color: black;
+    color: white;
 }
